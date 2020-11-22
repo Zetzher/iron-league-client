@@ -3,6 +3,8 @@ import auth from "./auth-service"; // Importamos funciones para llamadas axios a
 import { EatLoading } from "react-loadingg";
 import astronomia from "../musica/Astronomia.mp3";
 const { Consumer, Provider } = React.createContext();
+import ReactAudioPlayer from "react-audio-player";
+import loadingMusic from "../musica/loading-game.mp3";
 
 // HOC para crear Consumer
 // el componente withAuth recibe un componente como argumento y nos devuelve un componente con el mismo componente dentro de un <Consumer /> con las propiedades user e isLoggedin (state), y los métodos login, signup y logout (this)
@@ -122,9 +124,7 @@ class AuthProvider extends React.Component {
       // si está loading, devuelve un <div> y sino devuelve un componente <Provider> con un objeto con los valores: { isLoggedin, user, login, logout, signup}
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <section className="section-for-loading">
-        <audio autoPlay>
-          <source src={astronomia} />
-        </audio>
+         <ReactAudioPlayer src={loadingMusic} autoPlay volume={0.5} />
         <h1 className="title-for-loading">IRONLEAGUE</h1>
         <div className="spinner-loading">
           <EatLoading speed={2} />

@@ -54,7 +54,6 @@ class SideNav extends React.Component {
   };
 
   render() {
-    let logout = this.props.logout;
 
     const { showNav } = this.state;
     let navCoverStyle = { width: showNav ? "100%" : "0" };
@@ -91,7 +90,7 @@ class SideNav extends React.Component {
               </h3>
 
               <button
-                onClick={logout}
+                onClick={() => this.props.logout()}
                 style={{
                   width: 50,
                   height: 50,
@@ -145,7 +144,7 @@ class SideNav extends React.Component {
                 </button>
               </Link>
               <button
-                onClick={logout}
+                onClick={() => this.props.logout()}
                 style={{
                   width: 50,
                   height: 50,
@@ -220,7 +219,7 @@ class SideNav extends React.Component {
                 </button>
               </Link>
               <button
-                onClick={logout}
+                onClick={() => this.props.logout()}
                 style={{
                   width: 50,
                   height: 50,
