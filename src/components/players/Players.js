@@ -27,7 +27,7 @@ let Players = (props) => {
 
   return (
     <>
-      <ReactAudioPlayer src={zeldaPlayers} autoPlay />
+      <ReactAudioPlayer src={zeldaPlayers} autoPlay volume={0.4} />
       <div className="flex-carousel">
         <Flip>
           {listadoPlayers ? (

@@ -21,7 +21,7 @@ let HuevoPascua = () => {
   return (
     <>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=YT_n2NGOZMo"
+        url="https://www.youtube.com/watch?v=CQpb35MhV8U"
         volume="0.4"
         playing
         width="100%"

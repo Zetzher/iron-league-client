@@ -5,31 +5,32 @@ import { useHistory } from "react-router-dom";
 
 let FinalMalo = (props) => {
   const history = useHistory();
-    let reinicio = async() => {
-        let llamada = await axios.post(`${process.env.REACT_APP_API_URI}/final/malo/${props.match.params.id}`)
-        return llamada;
-    }
-
+  let reinicio = async () => {
+    let llamada = await axios.post(
+      `${process.env.REACT_APP_API_URI}/final/malo/${props.match.params.id}`
+    );
+    return llamada;
+  };
 
   let Redirigir = () => {
     setTimeout(() => {
       history.push({
-        pathname: "/"
-      })
-    }, 46000)
-  }
+        pathname: "/",
+      });
+    }, 46000);
+  };
 
-    useEffect(() => {
-        reinicio()
-        Redirigir()
-    }, [])
-    
+  useEffect(() => {
+    reinicio();
+    Redirigir();
+  }, []);
+
   return (
     <>
-     <ReactPlayer
+      <ReactPlayer
         url="https://www.youtube.com/watch?v=MuBsj1nwzgk"
         playing
-        volume= "0.5"
+        volume="0.5"
         width="100%"
         height="100vh"
       />

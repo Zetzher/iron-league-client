@@ -15,12 +15,11 @@ let FinalNeutral = (props) => {
   let Redirigir = () => {
     setTimeout(() => {
       history.push({
-        pathname: "/"
-      })
-    }, 43000)
-  }
+        pathname: "/",
+      });
+    }, 44000);
+  };
 
-  
   useEffect(() => {
     reinicio();
     Redirigir();

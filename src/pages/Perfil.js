@@ -47,15 +47,17 @@ let Perfil = (props) => {
       );
     }
   };
+  console.log(user ? user : null, "user");
 
   let FinalEscogido = () => {
     if (
-      props.user.facilVinculo >= 1 &&
-      props.user.normalVinculo >= 1 &&
-      props.user.dificilVinculo >= 1 &&
-      props.user.facilKill >= 1 &&
-      props.user.normalKill >= 1 &&
-      props.user.dificilKill >= 1
+      user &&
+      user.facilVinculo >= 1 &&
+      user.normalVinculo >= 1 &&
+      user.dificilVinculo >= 1 &&
+      user.facilKill >= 1 &&
+      user.normalKill >= 1 &&
+      user.dificilKill >= 1
     ) {
       return (
         <Link to={`/finalNeutral/${props.user._id}`} className="link-finales">
@@ -63,10 +65,11 @@ let Perfil = (props) => {
         </Link>
       );
     } else if (
-      props.user.facilVinculo >= 4 &&
-      props.user.normalVinculo >= 4 &&
-      props.user.dificilVinculo >= 4 &&
-      props.user.daniVinculo >= 1
+      user &&
+      user.facilVinculo >= 4 &&
+      user.normalVinculo >= 4 &&
+      user.dificilVinculo >= 4 &&
+      user.daniVinculo >= 1
     ) {
       return (
         <Link to={`/finalBueno/${props.user._id}`} className="link-finales">
@@ -74,10 +77,11 @@ let Perfil = (props) => {
         </Link>
       );
     } else if (
-      props.user.facilKill >= 4 &&
-      props.user.normalKill >= 4 &&
-      props.user.dificilKill >= 4 &&
-      props.user.daniKill >= 1
+      user &&
+      user.facilKill >= 4 &&
+      user.normalKill >= 4 &&
+      user.dificilKill >= 4 &&
+      user.daniKill >= 1
     ) {
       return (
         <Link to={`/finalMalo/${props.user._id}`} className="link-finales">
@@ -175,9 +179,12 @@ let Perfil = (props) => {
   useEffect(() => {
     getPerfil();
   }, []);
-  // <ReactAudioPlayer src={zeldaPerfil} autoPlay />
+
+  
+
   return (
     <>
+    <ReactAudioPlayer src={zeldaPerfil} autoPlay volume={0.4} />
       <div className="posicion-flex-perfil">
         <FinalEscogido />
         {props.user.rutaNeutral &&

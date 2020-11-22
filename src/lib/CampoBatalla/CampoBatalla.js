@@ -3117,9 +3117,9 @@ let CampoBatalla = (props) => {
 
   SetStats();
 
-  // <ReactAudioPlayer src={props.audio} autoPlay />
   return (
     <div className="posicion-campo-batalla">
+    <ReactAudioPlayer src={props.audio} autoPlay volume={0.5} />
       <SetStats />
 
       {/*ENEMIGO*/}

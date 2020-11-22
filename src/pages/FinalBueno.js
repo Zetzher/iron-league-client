@@ -4,7 +4,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 let FinalBueno = (props) => {
-    const history = useHistory();
+  const history = useHistory();
   let reinicio = async () => {
     let llamada = await axios.post(
       `${process.env.REACT_APP_API_URI}/final/bueno/${props.match.params.id}`
@@ -12,14 +12,13 @@ let FinalBueno = (props) => {
     return llamada;
   };
 
-
   let Redirigir = () => {
     setTimeout(() => {
       history.push({
-        pathname: "/"
-      })
-    }, 48000)
-  }
+        pathname: "/",
+      });
+    }, 48000);
+  };
 
   useEffect(() => {
     reinicio();

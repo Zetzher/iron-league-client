@@ -7,7 +7,7 @@ import ReactAudioPlayer from "react-audio-player";
 let SabiaEleccion = (props) => {
   return (
     <>
-     <ReactAudioPlayer src={zeldaSabiaEleccion} autoPlay />
+     <ReactAudioPlayer src={zeldaSabiaEleccion} autoPlay volume={0.4} />
       <section className="page-eleccion">
         <h1 className="link-perfil-eleccion-main-text">Mira tu Cuenta</h1>
         <div className="animation-for-sub-text">
