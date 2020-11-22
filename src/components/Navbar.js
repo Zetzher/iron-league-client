@@ -54,7 +54,6 @@ class SideNav extends React.Component {
   };
 
   render() {
-
     const { showNav } = this.state;
     let navCoverStyle = { width: showNav ? "100%" : "0" };
     let sideNavStyle = { width: showNav ? "250px" : "0" };
@@ -73,7 +72,11 @@ class SideNav extends React.Component {
           style={navCoverStyle}
         />
         <div name="side-nav" className="side-nav" style={sideNavStyle}>
-          <div onClick={this.closeNavClick} className="close-nav" style={{marginTop: 16}}>
+          <div
+            onClick={this.closeNavClick}
+            className="close-nav"
+            style={{ marginTop: 16 }}
+          >
             <FontAwesomeIcon
               icon={faCaretSquareLeft}
               style={{ fontSize: 30, color: "#6E263C" }}
@@ -88,22 +91,6 @@ class SideNav extends React.Component {
                 Aquí es donde comienza tu aventura, selecciona a uno de tus
                 personajes y diviértete.
               </h3>
-
-              <button
-                onClick={() => this.props.logout()}
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 50,
-                  border: "none",
-                  backgroundColor: "white",
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  style={{ fontSize: 30, color: "#6E263C" }}
-                />
-              </button>
             </div>
           ) : null}
           {this.props.isLoggedin &&
@@ -143,25 +130,11 @@ class SideNav extends React.Component {
                   />
                 </button>
               </Link>
-              <button
-                onClick={() => this.props.logout()}
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 50,
-                  border: "none",
-                  backgroundColor: "#CA7A93",
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  style={{ fontSize: 30, color: "#6E263C" }}
-                />
-              </button>
             </div>
           ) : null}
           {this.props.isLoggedin &&
-          window.location.href === `https://ironleaguehack.firebaseapp.com/juego` ? (
+          window.location.href ===
+            `https://ironleaguehack.firebaseapp.com/juego` ? (
             <div className="sidenav-apartados">
               <h2 style={{ fontSize: 25, marginBottom: 50 }}>Juego</h2>
               <h3>
@@ -218,22 +191,6 @@ class SideNav extends React.Component {
                   />
                 </button>
               </Link>
-              <button
-                onClick={() => this.props.logout()}
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 50,
-                  border: "none",
-                  backgroundColor: "#CA7A93",
-                  marginBottom: 40,
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  style={{ fontSize: 30, color: "#6E263C" }}
-                />
-              </button>
             </div>
           ) : null}
           {this.props.isLoggedin &&
@@ -264,32 +221,6 @@ class SideNav extends React.Component {
                   />
                 </button>
               </Link>
-              <button
-                onClick={logout}
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 50,
-                  border: "none",
-                  backgroundColor: "#CA7A93",
-                }}
-              >
-                <button
-                  onClick={logout}
-                  style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 50,
-                    border: "none",
-                    backgroundColor: "#CA7A93",
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={faSignOutAlt}
-                    style={{ fontSize: 30, color: "#6E263C" }}
-                  />
-                </button>
-              </button>
             </div>
           ) : null}
         </div>

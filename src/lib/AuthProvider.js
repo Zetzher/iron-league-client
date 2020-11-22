@@ -2,9 +2,9 @@ import React from "react";
 import auth from "./auth-service"; // Importamos funciones para llamadas axios a la API
 import { EatLoading } from "react-loadingg";
 import astronomia from "../musica/Astronomia.mp3";
-const { Consumer, Provider } = React.createContext();
 import ReactAudioPlayer from "react-audio-player";
 import loadingMusic from "../musica/loading-game.mp3";
+const { Consumer, Provider } = React.createContext();
 
 // HOC para crear Consumer
 // el componente withAuth recibe un componente como argumento y nos devuelve un componente con el mismo componente dentro de un <Consumer /> con las propiedades user e isLoggedin (state), y los métodos login, signup y logout (this)
